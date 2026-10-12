@@ -6,5 +6,12 @@
 	{{ with .Params.opengraph }}	
 		<meta property="og:title" content="{{ .title }}">
 		<meta property="og:image" content="{{ .image }}">
-	{{ end }} 
+	{{ end }}
+	{{ with .Params.audio }}
+    	<meta property="og:audio" content="{{ . }}" />
+	{{ end }}
+	{{ with .Params.videos }}
+        <meta property="og:video" content="{{ . | absURL }}" />
+    {{ end }}
+{{ end }}
 {{ end }}
